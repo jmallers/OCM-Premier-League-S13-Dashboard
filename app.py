@@ -32,8 +32,9 @@ scope = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-creds = ServiceAccountCredentials.from_json_keyfile_name(
-    "credentials.json",
+# STREAMLIT SECRETS CONNECTION
+creds = ServiceAccountCredentials.from_json_keyfile_dict(
+    st.secrets["gcp_service_account"],
     scope
 )
 
@@ -529,7 +530,6 @@ elif page == "Fixtures":
                         font-weight:600;
                         color:white;
                         padding-top:6px;
-                        padding-bottom:6px;
                     ">
                         {home}
                     </div>
@@ -562,7 +562,6 @@ elif page == "Fixtures":
                         font-weight:600;
                         color:white;
                         padding-top:6px;
-                        padding-bottom:6px;
                     ">
                         {away}
                     </div>
